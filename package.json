@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && mv out/_next out/next && sed -i 's/\\/_next/\\.\\/next/g' out/**.html && mv out/index.html ../extension && rsync -va --delete-after out/next/ ../extension/next/ && rm -rf out && rsync -va --delete-after public/next-assets ../extension/"
+    "build-ext": "next build && next export && mv out/_next out/next && sed -i 's/\\/_next/\\.\\/next/g' out/**.html && mv out/index.html extension && rsync -va --delete-after out/next/ extension/next/ && rm -rf out && rsync -va --delete-after public/next-assets extension/"
   },
   "license": "ISC",
   "dependencies": {
@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.8.1",
     "framer-motion": "^6.2.8",
     "next": "^12.1.1",
+    
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "usehooks-ts": "^2.6.0"

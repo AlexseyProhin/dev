@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import  Tick from './time';
 import { ApolloClientTokenizedProvider } from '@deep-foundation/react-hasura/apollo-client-tokenized-provider';
 import { TokenProvider, useTokenController } from '@deep-foundation/deeplinks/imports/react-token';
 import { useQuery, useSubscription, gql } from '@apollo/client';
@@ -8,10 +9,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 export default function Index() {
   return (<>
-    <ChakraProvider>
-      <h1>Deep.Foundation nextjs examples</h1>
-      <div><a href="/all">all subscribe</a></div>
-      <div><a href="/messanger">messanger</a></div>
-    </ChakraProvider>
+     <Tick />
   </>);
 }
