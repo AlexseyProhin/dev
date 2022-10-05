@@ -9,6 +9,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 export default function Index() {
   return (<>
+    <img src="/next-assets/logos.jpg" alt="logos" />
      <Tick />
+     
   </>);
 }

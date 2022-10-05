@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 
 export default function Tick() {
-    const [date, setDate] = useState(null);
+    const [date, setDate] = useState(new Date().toLocaleTimeString());
     useEffect(() => {
       setInterval(() => {
        setDate(new Date().toLocaleTimeString())
