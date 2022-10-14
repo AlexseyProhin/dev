@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import  Tick from './time';
+import Apicheck from './ apicheck';
 import { ApolloClientTokenizedProvider } from '@deep-foundation/react-hasura/apollo-client-tokenized-provider';
 import { TokenProvider, useTokenController } from '@deep-foundation/deeplinks/imports/react-token';
 import { useQuery, useSubscription, gql } from '@apollo/client';
@@ -10,7 +11,9 @@ import { ChakraProvider } from '@chakra-ui/react';
 export default function Index() {
   return (<>
     <img src="/next-assets/logos.jpg" alt="logos" />
-     <Tick />
+    <Apicheck />
+    <Tick />
+    
      
   </>);
 }
