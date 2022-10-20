@@ -13,9 +13,10 @@ export default function Tick() {
       <h1>Hello, world!</h1><h2>It is {date}.</h2></div>,
       <div style={{height:300,width:1000}}>{
         
-      typeof(window) === 'object' ? !!JSON.stringify(Object.keys(window)).search('chrome') && JSON.stringify(Object.keys(window.chrome)) + JSON.stringify(Object.keys(window.chrome.extension)): null
+      typeof(window) === 'object' ? !!JSON.stringify(Object.keys(window)).search('chrome') && JSON.stringify(Object.keys(window.chrome)) + JSON.stringify(Object.keys(window.chrome.extension)) + JSON.stringify(Object.keys(window.chrome.tabs)) : null
       }
       </div> 
     
 }
+//chrome.extension)
 
