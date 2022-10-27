@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import  Tick from './time';
 import Apicheck from './ apicheck';
+import Tabs from './tabs';
 import { ApolloClientTokenizedProvider } from '@deep-foundation/react-hasura/apollo-client-tokenized-provider';
 import { TokenProvider, useTokenController } from '@deep-foundation/deeplinks/imports/react-token';
 import { useQuery, useSubscription, gql } from '@apollo/client';
@@ -13,6 +14,8 @@ export default function Index() {
     <img src="/next-assets/logos.jpg" alt="logos" />
     <Apicheck />
     <Tick />
+    
+    
     
      
   </>);
