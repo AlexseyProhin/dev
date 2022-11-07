@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "gitset-fork":"git remote set-url origin git@github.com:AlexseyProhin/dev.git && git remote -v",
+    "gitset-fork": "git remote set-url origin git@github.com:AlexseyProhin/dev.git && git remote -v",
     "dev": "next dev",
-    "build-ext": "next build && next export && mv out/_next out/next && sed -i 's/\\/_next/\\.\\/next/g' out/**.html && mv out/index.html extension && rsync -va --delete-after out/next/ extension/next/ && rm -rf out && rsync -va --delete-after public/next-assets extension/"
+    "debug": "next build --debug",
+    "build-ext": "next build --debug && next export && mv out/_next out/next && sed -i 's/\\/_next/\\.\\/next/g' out/**.html && mv out/index.html extension && rsync -va --delete-after out/next/ extension/next/ && rm -rf out && rsync -va --delete-after public/next-assets extension/"
   },
   "license": "ISC",
   "dependencies": {
@@ -13,9 +14,9 @@
     "@deep-foundation/deeplinks": "^0.0.70",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
+    "caniuse-lite": "^1.0.30001430",
     "framer-motion": "^6.2.8",
     "next": "^12.1.1",
-    
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "usehooks-ts": "^2.6.0"
