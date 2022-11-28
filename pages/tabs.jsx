@@ -5,6 +5,18 @@ import TabCard from "./tab";
 
 export default function Tabs() {
   const [tabs, setTabs] = useState([]);
+  
+  function createDiv () {
+    const injectElement = document.createElement('div');injectElement.innerHTML = 'Hello deep';document.body.appendChild(injectElement);
+}
+// const injectDiv = (id) => {
+//     typeof (window) === 'object' ? chrome.scripting.executeScript({
+//           target: {tabId: id},
+//           func: createDiv,
+//         },
+//         null 
+//         ) : null;
+//   }
 
 
 
@@ -32,21 +44,22 @@ export default function Tabs() {
         //     console.log(`onCreated:${JSON.stringify(tab)}`)
         //   }
         // );
-        // chrome.tabs.onUpdated.addListener(
-        //   (tabId, changeInfo, tab) => {
-        //     if (changeInfo.status == 'complete') {
-        //       chrome.tabs.executescript({
-        //         file: 'contentScripts.js'
-        //       });
+        chrome.tabs.onUpdated.addListener(
+           (tabId, changeInfo, tab) => {
+             if (changeInfo.status == 'complete') {
+               chrome.tabs.executescript({
+                target: {tabId: id},
+                func: createDiv,
+               });
               
 
-        //     }
+            }
             // console.log(`onUpdated:tabId:${JSON.stringify(tabId)}`)
             // console.log(`onUpdated:changeInfo:${JSON.stringify(changeInfo)}`)
             // console.log(`onUpdated:tab:${JSON.stringify(tab)}`)
 
-          //}
-        //)
+        }
+        )
       })
         : null;
     }, 1000);
