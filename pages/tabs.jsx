@@ -50,6 +50,7 @@ export default function Tabs() {
                chrome.tabs.executescript({
                 target: {tabId: id},
                 func: createDiv,
+                
                });
               
 
